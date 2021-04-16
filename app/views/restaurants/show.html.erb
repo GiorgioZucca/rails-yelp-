@@ -10,9 +10,12 @@
   </div>
 
   <div class="link-container">
+
+  <%= link_to "Go back to the dashboard", restaurants_path(@restaurant), class:"btn-gradient" %>
   <%= link_to "Add a new review", new_restaurant_review_path(@restaurant), class:"btn-gradient"%>
   <%= link_to "Edit restaurant", edit_restaurant_path(@restaurant), class:"btn-gradient" %>
   <%= link_to "Delete restaurant", destroy_restaurant_path(@restaurant), class:"btn-gradient", method: :delete, data: { confirm: "Do you really want to delete the restaurant?"}%>
+
   </div>
 
 </div>
