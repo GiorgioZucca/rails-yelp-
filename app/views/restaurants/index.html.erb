@@ -1,9 +1,17 @@
-<h1>All restaurants</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://madklubben.dk/wp-content/uploads/2020/07/restaurant_hero_FCKbh.jpg);">
+  <div class="container">
+    <h1>All restaurants <strong> you </strong> can <strong> find nearby </strong>!</h1>
+    <p>Taste the best local and international food that is right behing your doorstep.</p>
+    <%= link_to "Add new Restaurant", new_restaurant_path, class:"btn-gradient"%>
+  </div>
+</div>
 
+<h3 style="margin: 15px;">What we recommend:</h3>
 
-<%= link_to "Add new Restaurant", new_restaurant_path %>
-
-<% @restaurants.each do |restaurant| %>
-  <p> <%= link_to restaurant.name, restaurant_path(restaurant) %></p>
-<% end %>
-
+<div class="container">
+  <div class="cards">
+    <% @restaurants.each do |restaurant| %>
+    <p> <%= link_to restaurant.name, restaurant_path(restaurant), class:"btn btn-ghost" %></p>
+    <% end %>
+  </div>
+</div>

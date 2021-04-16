@@ -1,12 +1,18 @@
-<h1><%= @restaurant.name %></h1>
+<div class="container">
+  <h1 style="margin-top: 60px;"><%= @restaurant.name %></h1>
 
-<h3>User's review</h3>
-<% @restaurant.reviews.each do |review| %>
-  <p><%= review.content %></p>
-<% end %>
+  <h3 style="margin-top: 30px; margin-bottom: 30px;">User's review</h3>
 
-<%= link_to "Add a new review", new_restaurant_review_path(@restaurant)%>
-<%= link_to "Edit restaurant", edit_restaurant_path(@restaurant)%>
-<%= link_to "Delete restaurant", destroy_restaurant_path(@restaurant), method: :delete, data: { confirm: "Do you really want to delete the restaurant?"}%>
+  <div class="notification">
+    <% @restaurant.reviews.each do |review| %>
+      <p class="notification-content">><%= review.content %></p>
+    <% end %>
+  </div>
 
+  <div class="link-container">
+  <%= link_to "Add a new review", new_restaurant_review_path(@restaurant), class:"btn-gradient"%>
+  <%= link_to "Edit restaurant", edit_restaurant_path(@restaurant), class:"btn-gradient" %>
+  <%= link_to "Delete restaurant", destroy_restaurant_path(@restaurant), class:"btn-gradient", method: :delete, data: { confirm: "Do you really want to delete the restaurant?"}%>
+  </div>
 
+</div>
